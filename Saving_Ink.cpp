@@ -1,5 +1,5 @@
 /*
-Á÷¼± ¿¬°á ±æÀÌ ÃÖ¼Ò ±¸ÇÏ´Â°ÅÀÓ.
+ì§ì„  ì—°ê²° ê¸¸ì´ ìµœì†Œ êµ¬í•˜ëŠ”ê±°ì„.
 
 */
 
@@ -17,19 +17,19 @@ struct Dot {
 struct Set {
 
 	int elements[MAX];
-	int size;// ÇØ´ç set ¿¡ ¸î°³ÀÇ ¿ø¼Ò°¡ ÀÖ´ÂÁö
+	int size;// í•´ë‹¹ set ì— ëª‡ê°œì˜ ì›ì†Œê°€ ìˆëŠ”ì§€
 
 
 };
 
-//set ÃÊ±âÈ­
+//set ì´ˆê¸°í™”
 void Initializeset(struct Set *set) {
 
 	set->size = 0;
 }
 
 
-//set ¿¡ ¿ø¼Ò°¡ ÀÖ´ÂÁö È®ÀÎ
+//set ì— ì›ì†Œê°€ ìˆëŠ”ì§€ í™•ì¸
 bool Contains(struct Set* set, int element) {
 
 	for (int i = 0; i < set->size; i++) {
@@ -40,12 +40,12 @@ bool Contains(struct Set* set, int element) {
 	return false;
 }
 
-//set¿¡ ¿ø¼Ò Ãß°¡
+//setì— ì›ì†Œ ì¶”ê°€
 void AddToset(struct Set* set, int element) {
 
-	if (set->size < MAX) { //²Ë ¾ÈÃ¡À¸¸é
+	if (set->size < MAX) { //ê½‰ ì•ˆì°¼ìœ¼ë©´
 		set->elements[set->size++] = element;
-		// Ãß°¡µÇ¸é set size ¿Ã¸², 
+		// ì¶”ê°€ë˜ë©´ set size ì˜¬ë¦¼, 
 	}
 
 
@@ -66,7 +66,7 @@ int main() {
 	/*print test
 	for (int i = 0; i < n; i++) {
 
-		printf("ÀÔ·Â:%.2lf %.2lf",dot[i].x,dot[i].y);
+		printf("ì…ë ¥:%.2lf %.2lf",dot[i].x,dot[i].y);
 
 	}
 	*/
@@ -90,17 +90,17 @@ int main() {
 
 
 		 
-		for (int i = 0; i < n; i++) { // ±âÁØÁ¡À» ÀÌµ¿ÇÏ´Â for¹®
+		for (int i = 0; i < n; i++) { // ê¸°ì¤€ì ì„ ì´ë™í•˜ëŠ” forë¬¸
 
 
 
 
-			for (int j = 0; j < n; j++) { // ºñ±³ÇÏ´Â for ¹®
+			for (int j = 0; j < n; j++) { // ë¹„êµí•˜ëŠ” for ë¬¸
 
-				if (j == i || (Contains(&set,i)&&Contains(&set,j))) // ÁıÇÕ¿¡ ÀÖÀ¸¸é °è¼Ó
-//i==j Á¶°ÇÀº µÑ´Ù 0ÀÏ¶§¸¸(¸ÇÃ·¿¡.) ÇØ´çµÇ´Â °ÅÀÓ. ±×°É °Á °£°áÇÏ°Ô ¾´°Å
-//±×¸®°í ÄÁÆ¼´º ¸¸³ª¸é ¾ÈÂÊ for ¹®À¸·Î °¨.
-// ±×¸®°í  µÚºÎÅÏ contains ¸¸ °í·ÁÇÏ°ÔµÊ. 
+				if (j == i || (Contains(&set,i)&&Contains(&set,j))) // ì§‘í•©ì— ìˆìœ¼ë©´ ê³„ì†
+//i==j ì¡°ê±´ì€ ë‘˜ë‹¤ 0ì¼ë•Œë§Œ(ë§¨ì²¨ì—.) í•´ë‹¹ë˜ëŠ” ê±°ì„. ê·¸ê±¸ ê± ê°„ê²°í•˜ê²Œ ì“´ê±°
+//ê·¸ë¦¬ê³  ì»¨í‹°ë‰´ ë§Œë‚˜ë©´ ì•ˆìª½ for ë¬¸ìœ¼ë¡œ ê°.
+// ê·¸ë¦¬ê³   ë’¤ë¶€í„´ contains ë§Œ ê³ ë ¤í•˜ê²Œë¨. 
 					continue;
 
 				else {
@@ -131,13 +131,6 @@ int main() {
 
 	printf("%.2f\n", round(sum * 100) / 100.0);
 
-	/*
-	c¾ğ¾î¿¡¼­ ¼Ò¼öÁ¡ ÀÌÇÏÀÇ ¼ö¸¦ ¹İ¿Ã¸²ÇÔ.
-	±âÁØÀº 5.
-	5¹Ì¸¸-> ³»¸²
-	5ÀÌ»ó-> ¿Ã¸².
-	
-	*/
 
 	return 0;
 }
